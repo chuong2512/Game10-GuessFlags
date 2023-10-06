@@ -88,13 +88,13 @@ public class BuyCoinButton : MonoBehaviour
 
     private void AddCoin()
     {
-        GameDataManager.Instance.playerData.AddDiamond(_coin);
-
         var coin = PlayerPrefs.GetInt("COIN", 0);
 
         coin += _coin;
 
         PlayerPrefs.SetInt("COIN", coin);
         PlayerPrefs.Save();
+
+        GameDataManager.Instance.playerData.AddDiamond(_coin);
     }
 }
